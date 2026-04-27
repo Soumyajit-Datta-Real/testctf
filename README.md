@@ -1,5 +1,3 @@
-The flag is `flag{c0ngr4ts_y0u_p0pp3d_my_st4ck_4nd_4ll_i_g0t_w4s_th1s_fl4g}`.
-
 It’s a straight ret2win. `vuln()` uses `gets()` on a buffer at `[ebp-0x6c]`, and the saved return address is 112 bytes later. The real target is `win` at `0x08049284`, and it checks two stack arguments:
 
 - `0xcafebebe`
@@ -174,9 +172,6 @@ E0E0E0E0F1F1F1F1
 
 and decrypting the Base64-decoded ciphertext gives:
 
-```text
-flag{DES_cant_keep_secrets_when_the_key_is_weak!}*******
-```
 
 The trailing `*` characters are expected because the script pads the plaintext using `*`.
 
@@ -184,15 +179,8 @@ The trailing `*` characters are expected because the script pads the plaintext u
 
 The real flag is the decrypted message without the padding:
 
-```text
-flag{DES_cant_keep_secrets_when_the_key_is_weak!}
-```
-
 ## 9. Final flag
 
-```text
-flag{DES_cant_keep_secrets_when_the_key_is_weak!}
-```
 
 ## 10. Short conclusion
 
@@ -322,13 +310,6 @@ There is a `fake_win()` function:
 
 ```text
 0x08049244 <fake_win>
-```
-
-It prints:
-
-```text
-Nice try! But this isn't what you're looking for...
-flag{th1s_1s_n0t_th3_r34l_fl4g}
 ```
 
 That is a decoy.
